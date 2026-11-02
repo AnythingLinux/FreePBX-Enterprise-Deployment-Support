@@ -1,16 +1,26 @@
-# FreePBX-Installation
+# FreePBX Production Installation Debian 13
 
 Step 1 — Verify your Debian 13 server
+
 cat /etc/os-release
+
 uname -r
+
 free -h
+
 df -h /
+
 ip -br addr
 
+Step 2 — Update Debian 13 Dependency
 
 apt update && apt full-upgrade -y
 
 apt install -y curl ca-certificates gnupg
+
+apt install -y wget curl sudo
+
+Step 3 — Install Tailscale
 
 mkdir -p --mode=0755 /usr/share/keyrings
 
@@ -23,37 +33,55 @@ https://pkgs.tailscale.com/stable/debian/trixie.tailscale-keyring.list \
 -o /etc/apt/sources.list.d/tailscale.list
 
 apt update
-apt install -y tailscale
-systemctl enable --now tailscaled
-tailscale up
-tailscale status
-tailscale ip -4
-tailscale netcheck
-systemctl status tailscaled
-## You will get 100.x.x.x server's private Tailscale IPv4 address.
-## Install Tailscale on your Ubuntu/Linux desktop and sign in using the same Tailscale account then Test SSH connectivity: ssh root@100.x.x.x Replace 100.x.x.x with your actual server Tailscale IP. You can now administer Debian remotely through the private Tailscale network.
 
-# Install FreePBX 17 on Debian 13
+apt install -y tailscale
+
+systemctl enable --now tailscaled
+
+tailscale up
+
+tailscale status
+
+tailscale ip -4
+
+tailscale netcheck
+
+systemctl status tailscaled
+
+You will get 100.x.x.x server's private Tailscale IPv4 address.
+Install Tailscale on your Ubuntu/Linux desktop and sign in using the same Tailscale account then Test SSH connectivity: ssh root@100.x.x.x Replace 100.x.x.x with your actual server Tailscale IP. You can now administer Debian remotely through the private Tailscale network.
+
+Step 3 — Install FreePBX 17 on Debian 13
+
 apt update
-apt install -y wget curl sudo
+
 wget https://github.com/AnythingLinux/FreePBX-Installation/blob/main/freepbx_debian_install.sh -O /tmp/sng_freepbx_debian_install.sh
+
 bash /tmp/freepbx_debian_install.sh
 
-# Install SSL
+Step 4 — Install SSL
+
 apt install -y certbot python3-certbot-apache
+
 certbot --apache -d voip.secure-transaction.co
-renew --dry-run
 
 Select: 2: default-ssl.conf               |                       | HTTPS | Enabled
 <img width="1920" height="1080" alt="Screenshot from 2026-10-30 18-51-37" src="https://gist.github.com/user-attachments/assets/32ac9876-17cb-4444-b15e-97f43d7816f8" />
 
+renew --dry-run
+
 The installer log is: /var/log/pbx/freepbx17-install.log
 
-## After installation, verify:
+Step 4 — After installation, verify:
+
 command -v fwconsole
+
 fwconsole --version
+
 fwconsole status
+
 asterisk -rx "core show version"
+
 systemctl status asterisk
 
 # Once FreePBX is installed, you can access its web interface through your server's Tailscale IP: http://100.x.x.x/
