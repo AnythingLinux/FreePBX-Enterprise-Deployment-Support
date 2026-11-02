@@ -84,42 +84,56 @@ asterisk -rx "core show version"
 
 systemctl status asterisk
 
-# Once FreePBX is installed, you can access its web interface through your server's Tailscale IP: http://100.x.x.x/
+Once FreePBX is installed, you can access its web interface through your server's Tailscale IP: http://100.x.x.x/
 
-Secure Debian 13 with Tailscale and UFW Firewall
+Step 4 — Secure Debian 13 with Tailscale and UFW Firewall. Check the existing firewall configuration:
 
-Check the existing firewall configuration:
 ufw status verbose
+
 nft list ruleset
+
 systemctl is-active nftables
+
 systemctl is-active firewalld
 
 Install UFW:
+
 apt update
+
 apt install -y ufw
+
 ufw version
 
 Configure default firewall policies:
+
 ufw default deny incoming
+
 ufw default allow outgoing
 
 Allow SSH through Tailscale:
+
 ip addr show tailscale0
+
 tailscale ip -4
 
 Allow SSH through the Tailscale interface:
+
 ufw allow in on tailscale0 to any port 22 proto tcp
 
 If you are currently connected through your server's public IP, first allow your current administration IP: 
 
 ufw allow from YOUR_ADMIN_PUBLIC_IP to any port 22 proto tcp
+
 ufw allow 22/tcp
 
 You can optionally permit inbound UDP 41641:
+
 ufw allow 41641/udp
 
 Restrict FreePBX Web GUI to Tailscale:
+
 ufw allow in on tailscale0 to any port 80 proto tcp
+
 ufw allow in on tailscale0 to any port 443 proto tcp
 
 Your FreePBX administration interface will then be accessible through: https://YOUR_TAILSCALE_IP/
@@ -129,61 +143,63 @@ Do not expose SIP and RTP to every public IP address. Obtain the signaling IP ad
 ufw allow from PROVIDER_SIGNALING_IP to any port 5060 proto udp
 
 For RTP media:
+
 ufw allow from PROVIDER_MEDIA_CIDR to any port 10000:20000 proto udp
 
 Enable UFW:
+
 ufw show added
+
 ufw enable
+
 ufw status verbose
 
 Expected default policies:
+
 Default: deny (incoming), allow (outgoing)
 
-Remove temporary public SSH access:
-Once you have successfully tested SSH through Tailscale from another device, remove the temporary public SSH rule if you created it:
+Remove temporary public SSH access: Once you have successfully tested SSH through Tailscale from another device, remove the temporary public SSH rule if you created it:
 
 ufw delete allow 22/tcp
 
 Verify firewall and network security:
 
 echo "===== FIREWALL ====="
+
 ufw status numbered
 
 echo "===== TAILSCALE ====="
+
 tailscale status
+
 tailscale ip -4
 
 echo "===== LISTENING PORTS ====="
+
 ss -tulnp
 
 echo "===== FIREWALL SERVICE ====="
+
 systemctl status ufw --no-pager
 
 Check connectivity from your administration computer:
+
 tailscale ping YOUR_SERVER_TAILSCALE_IP
+
 ssh root@YOUR_SERVER_TAILSCALE_IP
 
-DigitalOcean Cloud Firewall:
-If your Debian 13 server is hosted on DigitalOcean, remember that its Cloud Firewall is separate from UFW.
+DigitalOcean Cloud Firewall: If your Debian 13 server is hosted on DigitalOcean, remember that its Cloud Firewall is separate from UFW.
 
-SSH 22
-HTTP 80
-HTTPS 443
-SIP 5060
-RTP 10000–20000
-UDP 41641
+SSH 22, HTTP 80, HTTPS 443, SIP 5060, RTP 10000–20000, UDP 41641
 
 Verify your actual server:
+
 ufw status verbose
+
 tailscale status
+
 tailscale ip -4
+
 ip -br addr
+
 ss -tulnp
-
-
-
-
-
-
-
-
