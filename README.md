@@ -24,13 +24,9 @@ Step 3 — Create Tailscale account https://tailscale.com then Install Tailscale
 
 mkdir -p --mode=0755 /usr/share/keyrings
 
-curl -fsSL \
-https://pkgs.tailscale.com/stable/debian/trixie.noarmor.gpg \
--o /usr/share/keyrings/tailscale-archive-keyring.gpg
+curl -fsSL https://pkgs.tailscale.com/stable/debian/trixie.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
 
-curl -fsSL \
-https://pkgs.tailscale.com/stable/debian/trixie.tailscale-keyring.list \
--o /etc/apt/sources.list.d/tailscale.list
+curl -fsSL https://pkgs.tailscale.com/stable/debian/trixie.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
 
 apt update
 
