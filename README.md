@@ -1,6 +1,15 @@
 # FreePBX-Installation
 
+Step 1 — Verify your Debian 13 server
+cat /etc/os-release
+uname -r
+free -h
+df -h /
+ip -br addr
+
+
 apt update && apt full-upgrade -y
+
 apt install -y curl ca-certificates gnupg
 
 mkdir -p --mode=0755 /usr/share/keyrings
