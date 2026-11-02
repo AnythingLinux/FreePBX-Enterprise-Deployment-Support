@@ -20,7 +20,7 @@ apt install -y curl ca-certificates gnupg
 
 apt install -y wget curl sudo
 
-Step 3 — Install Tailscale
+Step 3 — Create Tailscale account https://tailscale.com then Install Tailscale
 
 mkdir -p --mode=0755 /usr/share/keyrings
 
