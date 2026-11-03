@@ -18,7 +18,7 @@ apt update && apt full-upgrade -y
 
 apt install -y curl ca-certificates gnupg
 
-apt install -y wget curl sudo
+apt install -y wget curl 
 
 Step 3 — Create Tailscale account https://tailscale.com then Install Tailscale
 
@@ -44,15 +44,15 @@ tailscale netcheck
 
 systemctl status tailscaled
 
-You will get 100.x.x.x server's private Tailscale IPv4 address.
-Install Tailscale on your Ubuntu/Linux desktop and sign in using the same Tailscale account then Test SSH connectivity: ssh root@100.x.x.x Replace 100.x.x.x with your actual server Tailscale IP. You can now administer Debian remotely through the private Tailscale network.
+You will get 100.x.x.x server's private Tailscale IPv4 address example: 100.94.13.32.
+Install Tailscale on your Ubuntu/Linux desktop and sign in using the same Tailscale account then Test SSH connectivity: ssh root@100.x.x.x Replace 100.94.13.32 with your actual server Tailscale IP. You can now administer Debian remotely through the private Tailscale network.
 
 Step 3 — Install FreePBX 17 on Debian 13
 
 apt update
 
 wget https://github.com/AnythingLinux/FreePBX-Installation/blob/main/freepbx_debian_install.sh -O /tmp/sng_freepbx_debian_install.sh
-
+chmod +x bash /tmp/freepbx_debian_install.sh
 bash /tmp/freepbx_debian_install.sh
 
 Step 4 — Install SSL
@@ -64,9 +64,9 @@ certbot --apache -d voip.secure-transaction.co
 Select: 2: default-ssl.conf               |                       | HTTPS | Enabled
 <img width="1920" height="1080" alt="Screenshot from 2026-10-30 18-51-37" src="https://gist.github.com/user-attachments/assets/32ac9876-17cb-4444-b15e-97f43d7816f8" />
 
-renew --dry-run
+certbot renew --dry-run
 
-The installer log is: /var/log/pbx/freepbx17-install.log
+The installer log is: cd /var/log/pbx && cat freepbx17-install-2026.11.02-18.25.25.log
 
 Step 4 — After installation, verify:
 
@@ -74,29 +74,27 @@ command -v fwconsole
 
 fwconsole --version
 
-fwconsole status
-
 asterisk -rx "core show version"
 
+systemctl start asterisk
 systemctl status asterisk
+systemctl restart asterisk
 
 Once FreePBX is installed, you can access its web interface through your server's Tailscale IP: http://100.x.x.x/
 
 Step 4 — Secure Debian 13 with Tailscale and UFW Firewall. Check the existing firewall configuration:
-
-ufw status verbose
-
-nft list ruleset
-
-systemctl is-active nftables
-
-systemctl is-active firewalld
 
 Install UFW:
 
 apt update
 
 apt install -y ufw
+
+ufw status verbose
+
+systemctl is-active nftables
+
+systemctl is-active firewalld
 
 ufw version
 
@@ -199,3 +197,9 @@ tailscale ip -4
 ip -br addr
 
 ss -tulnp
+
+# Setup Desktop tailscale
+curl -fsSL https://tailscale.com/install.sh | sh
+tailscale up
+tailscale set --ssh
+ssh 100.x.x.x
