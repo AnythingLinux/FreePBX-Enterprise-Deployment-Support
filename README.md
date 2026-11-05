@@ -1,4 +1,4 @@
-# VoIP System: FreePBX on Debian 13 (Trixie) + Tailscale
+FreePBX on Debian 13 (Trixie) + Tailscale
 
 Client-focused guide to deploy, secure, and test a VoIP platform for **call termination**, **call center**, and general PBX use.
 
@@ -71,6 +71,5 @@ Client-focused guide to deploy, secure, and test a VoIP platform for **call term
 
 ## References
 - FreePBX docs: https://sangomakb.atlassian.net/wiki/spaces/PG/overview
-- FreePBX install script repo: https://github.com/FreePBX/sng_freepbx_debian_install
 - Tailscale docs: https://tailscale.com/kb
 - Asterisk docs: https://docs.asterisk.org
