@@ -17,9 +17,16 @@ Client-focused guide to deploy, secure, and test a VoIP platform for **call term
 
 ---
 
-## 2. Requirements
+## 2. DM for setup support
 
-### 2.1 Server sizing
+```bash
+💬 Telegram: https://t.me/AnythingLinux
+📩 WhatsApp: https://wa.me/8801890757616
+```
+
+## 3. Requirements
+
+### 3.1 Server sizing
 
 | Use case | vCPU | RAM | Disk | Concurrent calls |
 |---|---|---|---|---|
@@ -30,20 +37,20 @@ Client-focused guide to deploy, secure, and test a VoIP platform for **call term
 - Bare metal or VM (KVM/VMware/Proxmox). Avoid oversubscribed VPS for production.
 - Add disk for call recordings (≈ 0.5 MB/min per call in WAV; use MP3/compression).
 
-### 2.2 Software
+### 3.2 Software
 - Debian 13 (Trixie) minimal, 64-bit, fresh install
 - FreePBX 17 + Asterisk 21/22 LTS
 - MariaDB, Apache, PHP (installed by FreePBX script)
 - Tailscale (latest)
 
-### 2.3 Network
+### 3.3 Network
 - Static public IP (or 1:1 NAT) and static LAN IP
 - Reverse DNS + FQDN (e.g. `pbx.example.com`)
 - Time sync (chrony/NTP), correct timezone
 - Bandwidth per call: **~87 kbps** (G.711) / **~31 kbps** (G.729) each direction. Plan 100 kbps × peak calls, plus 25% headroom.
 - Latency < 150 ms, jitter < 30 ms, packet loss < 1%
 
-### 2.4 Ports
+### 3.4 Ports
 
 | Port | Proto | Purpose | Expose to |
 |---|---|---|---|
@@ -53,21 +60,12 @@ Client-focused guide to deploy, secure, and test a VoIP platform for **call term
 | 22 | TCP | SSH | Tailscale only |
 | 41641 | UDP | Tailscale | Outbound/any |
 
-### 2.5 Accounts & info to collect from client
+### 3.5 Accounts & info to collect from client
 - SIP carrier details: host, auth (IP or user/pass), codecs, max channels, DIDs
 - Caller ID rules, emergency (E911) address registration
 - Number of extensions, agents, queues, IVR menus, business hours
 - Recording/retention and compliance needs (GDPR, PCI, call-recording consent)
 - Tailscale tailnet admin access
-
----
-
-## 3. DM for setup support
-
-```bash
-💬 Telegram: https://t.me/AnythingLinux
-📩 WhatsApp: https://wa.me/8801890757616
-```
 
 ---
 
