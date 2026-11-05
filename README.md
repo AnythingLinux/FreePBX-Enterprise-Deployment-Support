@@ -20,9 +20,9 @@ I'll deploy, secure, and test a VoIP platform for **call termination**, **call c
 ## 2. DM for setup support
 
 ```bash
-💬 Telegram: https://t.me/AnythingLinux
-📩 WhatsApp: https://wa.me/8801890757616
-   Demo: https://youtu.be/wI6sLyb2ZQw
+[Telegram:](https://t.me/AnythingLinux)
+[WhatsApp:](https://wa.me/8801890757616)
+[Demo:](https://youtu.be/wI6sLyb2ZQw)
 ```
 
 ## 3. Requirements
