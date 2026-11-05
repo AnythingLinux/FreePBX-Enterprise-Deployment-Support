@@ -2,7 +2,7 @@
 
 Production-ready FreePBX implementation engineering on Debian 13 "Trixie". Delivering secure Tailscale mesh networking solutions engineered for global remote agents, high-performance call centers, automated enterprise VoIP call termination architectures.
 
-▶ [View Live Infrastructure Operation Demo](https://youtu.be)
+▶ [View Live Infrastructure Operation Demo](https://youtu.be/wI6sLyb2ZQw)
 
 ---
 
@@ -16,9 +16,9 @@ Carrier / SIP Provider <--- Public IP ---> [ FreePBX / Asterisk ] <--- Tailscale
 ## 2. Premium Remote Freelance Consulting & Technical Support Services
 Providing expert hands-on deployment engineering for high-frequency cryptocurrency trading communications, FusionPBX architectures, high-volume enterprise call centers.
 
-* 💬 **Telegram:** [@AnythingLinux Support](https://t.me)
-* 📩 **WhatsApp Business:** [Connect Now](https://wa.me)
-* 🌐 **Freelancing Procurement:** Available for global enterprise telecom infrastructure provisioning contracts.
+* 💬 **Telegram:** [Telegram](https://t.me/AnythingLinux)
+* 📩 **WhatsApp Business:** [WhatsApp](https://wa.me/8801890757616)
+  * 🌐 **Freelancing Procurement:** Available for global enterprise telecom infrastructure provisioning contracts.
 
 ---
 
