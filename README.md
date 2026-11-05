@@ -89,8 +89,6 @@ Maintaining voice audio fidelity requires clear paths where system network laten
 
 ---
 
----
-**Keywords:** FreePBX 17, Debian 13, Trixie, Asterisk 22, PHP 8.2, Tailscale, PBX, SIP trunk, call center, call termination.
----
+**Keywords:** FreePBX 17, Debian 13, Trixie, Asterisk, Tailscale, VoIP, VoIP call, PBX, SIP trunk, call center, call termination.
 
 *Disclaimer: Asterisk and FreePBX are registered trademarks of Sangoma Technologies.*
