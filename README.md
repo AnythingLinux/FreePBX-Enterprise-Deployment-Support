@@ -16,7 +16,7 @@ Providing expert hands-on deployment engineering for high-frequency cryptocurren
 
 * 💬 **Telegram:** [Telegram](https://t.me/AnythingLinux)
 * 📩 **WhatsApp Business:** [WhatsApp](https://wa.me/8801890757616)
-  * 🌐 **Freelancing Procurement:** Available for global enterprise telecom infrastructure provisioning contracts.
+* 🌐 **Freelancing Procurement:** Available for global enterprise telecom infrastructure provisioning contracts.
 
 ---
 
