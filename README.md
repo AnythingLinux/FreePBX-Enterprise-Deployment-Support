@@ -80,15 +80,13 @@ Exposing default SIP or HTTP ports to the open internet results in persistent br
 Maintaining voice audio fidelity requires clear paths where system network latency tests under 150 milliseconds. Jitter must register below 30 milliseconds, accompanied by absolute zero percent packet loss.
 
 ---
-
 ## References
 - [FreePBX docs](https://sangomakb.atlassian.net/wiki/spaces/PG/overview)
 - [Tailscale docs](https://tailscale.com/kb)
 - [Asterisk docs](https://docs.asterisk.org)
-- [Credit Sangoma](https://sangoma.com)
-
 ---
 
 **Keywords:** FreePBX 17, Debian 13, Trixie, Asterisk, Tailscale, VoIP, VoIP call, PBX, SIP trunk, call center, call termination.
 
-*Disclaimer: Asterisk and FreePBX are registered trademarks of Sangoma Technologies.*
+*Disclaimer: Asterisk and FreePBX are registered trademarks of Sangoma Technologies.* [Credit Sangoma](https://sangoma.com)
+
