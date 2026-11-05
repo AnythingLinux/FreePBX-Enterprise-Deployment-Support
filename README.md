@@ -1,6 +1,6 @@
 # FreePBX Setup on Debian 13 (Trixie) + Tailscale
 
-Client-focused guide to deploy, secure, and test a VoIP platform for **call termination**, **call center**, and general PBX use.
+I'll deploy, secure, and test a VoIP platform for **call termination**, **call center**, and general PBX use.
 
 ---
 
