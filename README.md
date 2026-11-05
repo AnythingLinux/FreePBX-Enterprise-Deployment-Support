@@ -14,8 +14,8 @@ Carrier / SIP Provider <--- Public IP ---> [ FreePBX / Asterisk ] <--- Tailscale
 ## 2. Premium Remote Freelance Consulting & Technical Support Services
 Providing expert hands-on deployment engineering for high-frequency cryptocurrency trading communications, FusionPBX architectures, high-volume enterprise call centers.
 
-* 💬 **Telegram:** [Telegram](https://t.me/AnythingLinux)
-* 📩 **WhatsApp Business:** [WhatsApp](https://wa.me/8801890757616)
+* 💬 **Telegram:** [Anything Linux](https://t.me/AnythingLinux)
+* 📩 **WhatsApp Business:** [@AnythingLinux](https://wa.me/8801890757616)
 * 🌐 **Freelancing Procurement:** Available for global enterprise telecom infrastructure provisioning contracts.
 
 ---
