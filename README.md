@@ -12,9 +12,6 @@ I'll do production-ready FreePBX setup on Debian 13 "Trixie", with Tailscale for
                                            LAN IP phones / agents
 ```
 
-- **Public IP:** carrier trunks (SIP/RTP) only.
-- **Tailscale:** admin GUI/SSH, remote agents, site-to-site. Never expose the GUI publicly.
-
 ---
 
 ## 2. DM for setup support
