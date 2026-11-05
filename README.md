@@ -1,8 +1,6 @@
 # Enterprise FreePBX Infrastructure Deployment & Professional Technical Support
 
-Production-ready FreePBX implementation engineering on Debian 13 "Trixie". Delivering secure Tailscale mesh networking solutions engineered for global remote agents, high-performance call centers, automated enterprise VoIP call termination architectures.
-
-▶ [View Live Infrastructure Operation Demo](https://youtu.be/wI6sLyb2ZQw)
+Production-ready FreePBX implementation engineering on Debian 13 "Trixie". Delivering secure Tailscale mesh networking solutions engineered for global remote agents, high-performance call centers, automated enterprise VoIP call termination architectures. ▶️ [Demo](https://youtu.be/wI6sLyb2ZQw)
 
 ---
 
