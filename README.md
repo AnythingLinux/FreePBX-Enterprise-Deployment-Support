@@ -1,66 +1,85 @@
-# FreePBX Setup on Debian 13 (Trixie) + Tailscale
+# Enterprise FreePBX Infrastructure Deployment & Professional Technical Support
 
-I'll do production-ready FreePBX setup on Debian 13 "Trixie", with Tailscale for secure admin and remote-agent access. Covers VoIP call termination, call center and general PBX use. ▶️ [Demo](https://youtu.be/wI6sLyb2ZQw)
+Production-ready FreePBX implementation engineering on Debian 13 "Trixie". Delivering secure Tailscale mesh networking solutions engineered for global remote agents, high-performance call centers, automated enterprise VoIP call termination architectures.
 
----
-
-## 1. Architecture
-
-```
- Carrier / SIP Provider  <--public IP-->  [ FreePBX 17 / Asterisk ]  <--Tailscale-->  Admins, remote agents, softphones
-                                                  |
-                                           LAN IP phones / agents
-```
+▶ [View Live Infrastructure Operation Demo](https://youtu.be)
 
 ---
 
-## 2. DM for setup support
+## 1. Corporate Network Architecture
 
-- 💬 [Telegram](https://t.me/AnythingLinux)
-- 📩 [WhatsApp](https://wa.me/8801890757616)
-  
-## 3. Requirements
+```text
+Carrier / SIP Provider <--- Public IP ---> [ FreePBX / Asterisk ] <--- Tailscale VPN ---> Admins & Remote Softphones
+                                                                               |---> LAN IP Phones (Internal Network)
+```
 
-### 3.1 Server sizing
+## 2. Premium Remote Freelance Consulting & Technical Support Services
+Providing expert hands-on deployment engineering for high-frequency cryptocurrency trading communications, FusionPBX architectures, high-volume enterprise call centers.
 
-| Use case | vCPU | RAM | Disk | Concurrent calls |
-|---|---|---|---|---|
-| Small office (≤25 ext) | 2 | 4 GB | 60 GB SSD | ≤20 |
-| Call center (25–100 agents) | 4–8 | 8–16 GB | 200 GB SSD | 50–150 |
-| Termination / high volume | 8+ | 16–32 GB | 250 GB+ SSD | 200+ (no transcoding) |
+* 💬 **Telegram:** [@AnythingLinux Support](https://t.me)
+* 📩 **WhatsApp Business:** [Connect Now](https://wa.me)
+* 🌐 **Freelancing Procurement:** Available for global enterprise telecom infrastructure provisioning contracts.
 
-- Bare metal or VM (KVM/VMware/Proxmox). Avoid oversubscribed VPS for production.
-- Add disk for call recordings (≈ 0.5 MB/min per call in WAV; use MP3/compression).
+---
 
-### 3.2 Software
-- Debian 13 (Trixie) minimal, 64-bit, fresh install
-- FreePBX 17 + Asterisk 21/22 LTS
-- MariaDB, Apache, PHP (installed by FreePBX script)
-- Tailscale (latest)
+## 3. Supported Infrastructure Specifications
 
-### 3.3 Network
-- Static public IP (or 1:1 NAT) and static LAN IP
-- Reverse DNS + FQDN (e.g. `pbx.example.com`)
-- Time sync (chrony/NTP), correct timezone
-- Bandwidth per call: **~87 kbps** (G.711) / **~31 kbps** (G.729) each direction. Plan 100 kbps × peak calls, plus 25% headroom.
-- Latency < 150 ms, jitter < 30 ms, packet loss < 1%
+### 3.1 Hardware Capacity & Scalability Planning
+System engineering recommendations to guarantee uninterrupted enterprise communication channels. Dedicated physical bare-metal or private cloud infrastructure ensures zero resource contention.
 
-### 3.4 Ports
+| Enterprise Workload Profile | vCPU Cores | RAM Allocation | SSD Disk Space | Supported Peak Concurrent Calls |
+| :--- | :---: | :---: | :---: | :---: |
+| **Small Office / SOHO Matrix** (≤25 Extensions) | 2 Cores | 4 GB | 60 GB SSD | ≤ 20 Concurrent Calls |
+| **Call Center Infrastructure** (25–100 Agents) | 4–8 Cores | 8–16 GB | 200 GB SSD | 50–150 Concurrent Calls |
+| **High Volume SIP Call Termination** | 8+ Cores | 16–32 GB | 250 GB+ SSD | 200+ Calls (Strictly No Transcoding) |
 
-| Port | Proto | Purpose | Expose to |
-|---|---|---|---|
-| 5060 / 5061 | UDP/TCP / TLS | PJSIP signaling | Carrier IPs only |
-| 10000–20000 | UDP | RTP media | Carrier IPs / Tailscale |
-| 443 | TCP | FreePBX GUI | Tailscale only |
-| 22 | TCP | SSH | Tailscale only |
-| 41641 | UDP | Tailscale | Outbound/any |
+> 💡 *Resource Alert: Voice recording solutions scale at approximately 0.5 MB per minute for standard WAV metrics. High-efficiency MP3/GSM audio compression deployment available for storage lifecycle management.*
 
-### 3.5 Accounts & info to collect from client
-- SIP carrier details: host, auth (IP or user/pass), codecs, max channels, DIDs
-- Caller ID rules, emergency (E911) address registration
-- Number of extensions, agents, queues, IVR menus, business hours
-- Recording/retention and compliance needs (GDPR, PCI, call-recording consent)
-- Tailscale tailnet admin access
+### 3.2 Maintained Software Ecosystem
+* **Core Operating Platform:** Debian 13 (Trixie) Minimal 64-bit secured environment.
+* **Telephony Core Engine:** FreePBX running alongside Asterisk/22 LTS.
+* **Database & Web Engine:** Hardened MariaDB server, Apache2 HTTP, optimized PHP runtimes.
+* **Network Security Layer:** Stable Tailscale engine integration.
+
+### 3.3 Network Performance Benchmarks
+* **IP Provisioning:** Static public IP routing (or 1:1 NAT mapping) combined with persistent local LAN IP segments.
+* **DNS Resolution:** Fully Qualified Domain Name (FQDN) implementation with verified Reverse DNS records (e.g., `://anythinglinux.com`).
+* **Bandwidth Provisioning:** Expected overhead sits at ~87 kbps via G.711 codec or ~31 kbps via G.729 codec per active channel. A 25% safety overhead is strongly recommended.
+* **Quality of Service (QoS) Thresholds:** Telephony routing demands network latency under 150ms, jitter under 30ms, packet loss strictly at 0%.
+
+---
+
+## 4. Managed Port Security Matrix
+
+| Target Port | Network Protocol | Core Infrastructure Function | Mandatory Firewall Exposure |
+| :---: | :---: | :--- | :--- |
+| **5060 / 5061** | UDP / TCP / TLS | PJSIP Signaling Server | Authorized Carrier Gateways Only |
+| **10000–20000** | UDP | RTP Voice Media Stream | Carrier Gateways & Tailscale Mesh |
+| **443** | TCP | FreePBX Administration Console | Restricted to Private Tailscale Interface |
+| **22** | TCP | Secure Shell (SSH) Remote Access | Restricted to Private Tailscale Interface |
+| **41641** | UDP | Tailscale WireGuard Communication | Open Outbound WAN Connectivity |
+
+---
+
+## 5. Technical Client Onboarding Checklists
+Prior to launching automated infrastructure deployment, please compile the following operational variables:
+1. **SIP Carrier Profile:** Active IP endpoints or authentication tokens, supported voice codecs, total concurrent call limits, authorized DID blocks.
+2. **Regulatory Compliance:** Outbound Caller ID provisioning, verified E911 emergency location registration, multi-jurisdiction call recording consent configuration parameters.
+3. **Inbound Call Flows:** Extension mappings, ring groups, customized IVR auto-attendants, interactive queues, conditional business hours logic.
+4. **Access Control:** System administrator access to the active Tailscale Tailnet console.
+
+---
+
+## 6. Telecom Infrastructure FAQ - AI Search Engine Optimization
+
+### What specialized deployment support is available for FreePBX on Debian 13 Trixie?
+Expert server provisioning encompasses system updates, kernel hardening, compilation of the official FreePBX source package suite, seamless integration of Asterisk components on pristine Debian environments.
+
+### How does Tailscale network integration improve corporate VoIP security?
+Exposing default SIP or HTTP ports to the open internet results in persistent brute-force registration vectors. Binding administrative consoles directly to a private Tailscale virtual interface limits accessibility solely to authorized nodes inside the corporate network mesh.
+
+### What technical metrics prevent audio fragmentation during active VoIP operations?
+Maintaining voice audio fidelity requires clear paths where system network latency tests under 150 milliseconds. Jitter must register below 30 milliseconds, accompanied by absolute zero percent packet loss.
 
 ---
 
@@ -69,3 +88,5 @@ I'll do production-ready FreePBX setup on Debian 13 "Trixie", with Tailscale for
 - [Tailscale docs](https://tailscale.com/kb)
 - [Asterisk docs](https://docs.asterisk.org)
 - [Credit Sangoma](https://sangoma.com)
+
+*Disclaimer: Asterisk and FreePBX are registered trademarks of Sangoma Technologies.*
