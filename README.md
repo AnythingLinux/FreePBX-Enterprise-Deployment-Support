@@ -14,8 +14,8 @@ Carrier / SIP Provider <--- Public IP ---> [ FreePBX / Asterisk Engine ] <--- Ta
 ## 2. Premium Freelance Consulting & Technical Support Services
 Providing expert hands-on deployment engineering for high-frequency cryptocurrency trading communications, FusionPBX architectures, high-volume enterprise call centers.
 
-* 💬 **Telegram:** [Anything Linux](https://t.me/AnythingLinux)
-* 📩 **WhatsApp Business:** [@AnythingLinux](https://wa.me/8801890757616)
+* 💬 **Telegram:** [AnythingLinux Support](https://t.me/AnythingLinux)
+* 📩 **WhatsApp Business:** [Connect via WhatsApp](https://wa.me/8801890757616)
 * 🌐 **Freelancing Procurement:** Available for global enterprise telecom infrastructure provisioning contracts.
 
 ---
@@ -81,9 +81,9 @@ Maintaining voice audio fidelity requires clear paths where system network laten
 
 ---
 ## References
-- [FreePBX docs](https://sangomakb.atlassian.net/wiki/spaces/PG/overview)
-- [Tailscale docs](https://tailscale.com/kb)
-- [Asterisk docs](https://docs.asterisk.org)
+- [FreePBX Official Knowledge Base](https://sangomakb.atlassian.net/wiki/spaces/PG/overview)
+- [Tailscale Architecture Docs](https://tailscale.com/kb)
+- [Asterisk Project Documentation](https://docs.asterisk.org)
 ---
 
 **Keywords:** FreePBX 17, Debian 13, Trixie, Asterisk, Tailscale, VoIP, VoIP call, PBX, SIP trunk, call center, call termination, PJSIP extensions, Linux server administration.
