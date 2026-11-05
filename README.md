@@ -89,4 +89,6 @@ Maintaining voice audio fidelity requires clear paths where system network laten
 - [Asterisk docs](https://docs.asterisk.org)
 - [Credit Sangoma](https://sangoma.com)
 
+---
+
 *Disclaimer: Asterisk and FreePBX are registered trademarks of Sangoma Technologies.*
