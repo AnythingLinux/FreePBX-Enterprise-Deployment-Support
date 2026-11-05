@@ -16,8 +16,6 @@ I'll do production-ready FreePBX setup on Debian 13 "Trixie", with Tailscale for
 
 ## 2. DM for setup support
 
----
-
 - 💬 [Telegram](https://t.me/AnythingLinux)
 - 📩 [WhatsApp](https://wa.me/8801890757616)
   
