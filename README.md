@@ -1,6 +1,6 @@
 # FreePBX Setup on Debian 13 (Trixie) + Tailscale
 
-I'll do production deploy, secure, and test a VoIP platform for **call termination**, **call center**, and general PBX use. Debian 13 not officially supported by Sangoma that why I have develop a script which will setup stable FreePBX into Debian 13 (Trixie).
+I'll do production deploy FreePBX 17 (Asterisk 22) on Debian 13 "Trixie", with Tailscale for secure admin and remote-agent access. Covers VoIP call termination, call center and general PBX use.
 
 ---
 
