@@ -1,6 +1,6 @@
 # FreePBX Setup on Debian 13 (Trixie) + Tailscale
 
-I'll do production deploy FreePBX 17 (Asterisk 22) on Debian 13 "Trixie", with Tailscale for secure admin and remote-agent access. Covers VoIP call termination, call center and general PBX use.
+I'll do production-ready FreePBX setup on Debian 13 "Trixie", with Tailscale for secure admin and remote-agent access. Covers VoIP call termination, call center and general PBX use.
 
 ---
 
